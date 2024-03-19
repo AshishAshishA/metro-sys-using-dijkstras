@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <div style="margin-left: 25%; margin-top: 6%">
+        <h1>WELCOME TO BHOPAL METRO</h1>
+        <h1>Shortest Path (Bhopal Metro)</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div style="background-color: #f5f5f5; width: 50%; margin-left: 25%; margin-top: 5%; padding: 10px;">
+        <h2>---------------Total Dist-------------------</h2>
+        <h3>{{src}}---{{shortest_dist}}<b>km</b>---{{dest}}</h3>
+
+        <h2>-----------Stations in Between--------------</h2>
+        <h3>
+            {{src}}--
+            {% for node,cost in station_list %} 
+                {{cost}}<b>km</b>---{{node}}---
+            {% endfor %}
+            >
+        </h3>
+    </div>
+{% endblock %}

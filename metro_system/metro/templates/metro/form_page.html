@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <h1 style="margin-left: 30%; margin-top: 10%;">WELCOME TO BHOPAL METRO</h1>
+    <h1 style="margin-left: 37%; margin-top: 1%;">Select The Stations</h1>
+{% endblock title %}
+
+{% block content %}
+    <form action="{% url 'shortest_path' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3" style="background-color: #f5f5f5; width: 40%; justify-content: center; margin-left: 30%;">
+            <label for="src" class="form-label" style="margin: 2%; font-weight: bold;">Source Station:</label>
+            <br>
+            <select name="src" id="src" style="margin-left: 4%;">
+                <option value="a">Station A</option>
+                <option value="b">Station B</option>
+                <option value="c">Station C</option>
+                <option value="d">Station D</option>
+                <option value="e">Station E</option>
+                <option value="f">Station F</option>
+            </select>
+            <br>
+            <label for="dest" class="form-label" style="margin: 2%; font-weight: bold;">Destination Station:</label>
+            <br>
+            <select name="dest" id="dest" style="margin-left: 4%;">
+                <option value="a">Station A</option>
+                <option value="b">Station B</option>
+                <option value="c">Station C</option>
+                <option value="d">Station D</option>
+                <option value="e">Station E</option>
+                <option value="f">Station F</option>
+            </select>
+            <br>
+            <button type="submit" class="btn btn-primary" style="margin: 10px 0 4px 200px;">Submit</button>
+        </div>
+
+    </form>
+{% endblock content %}
